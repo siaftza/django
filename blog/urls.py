@@ -1,6 +1,6 @@
 ## importing django's function path and all views fom blog app
-
 from django.urls import path
+from django.contrib import admin
 from . import views
 
 urlpatterns = [
@@ -9,4 +9,6 @@ urlpatterns = [
     ## post_list is the name of the url used to identify the view
     ## important to name each url in the app!
     path('', views.post_list, name='post_list'),
+    path('post/<int:pk>/', views.post_detail, name='post_detail'),
+ 
 ]
